@@ -1,0 +1,31 @@
+$ node src/server.js
+    LDAP server listening at ldap://0.0.0.0:1389
+
+$ ldapsearch -H ldap://localhost:1389 -x -b "o=example,dc=org" "uid=auth0|60f5056d8a64720068312857"
+
+    # extended LDIF
+    #
+    # LDAPv3
+    # base <o=example,dc=org> with scope subtree
+    # filter: uid=auth0|60f5056d8a64720068312857
+    # requesting: ALL
+    #
+
+    # auth0|60f5056d8a64720068312857, example, org
+    dn: uid=auth0|60f5056d8a64720068312857,o=example,dc=org
+    objectclass: person
+    objectclass: top
+    uid: auth0|60f5056d8a64720068312857
+    email: auth0.user01@example.org
+    givenName: user01
+    sn: user01
+    group: grp_elite
+    group: grp_dudes
+    group: grp_bros
+
+    # search result
+    search: 2
+    result: 0 Success
+
+    # numResponses: 2
+    # numEntries: 1
