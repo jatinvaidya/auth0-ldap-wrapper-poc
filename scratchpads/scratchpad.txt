@@ -1,4 +1,6 @@
-$ node src/server.js
+$ docker build --tag ldapwrapper
+
+$ docker run -p 1389:1389 --name ldapwrapper ldapwrapper
     LDAP server listening at ldap://0.0.0.0:1389
 
 $ ldapsearch -H ldap://localhost:1389 -x -b "o=example,dc=org" "uid=auth0|60f5056d8a64720068312857"
